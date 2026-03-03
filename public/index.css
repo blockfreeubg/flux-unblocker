@@ -3,13 +3,54 @@
 body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     margin: 0;
-    background-image: url('backgroundgifthing.gif');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    width: 400%;
+    height: 400%;
+    background-repeat: repeat;
+    animation: starsMove 120s linear infinite;
+    pointer-events: none;
+}
+
+body::before {
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px, 4px 4px, 2px 2px;
+    background-position: 0 0, 50px 100px, 130px 40px;
+    opacity: 0.4;
+}
+
+body::after {
+    background-image:
+        radial-gradient(white 2px, transparent 2px),
+        radial-gradient(white 2px, transparent 2px);
+    background-size: 6px 6px, 8px 8px;
+    background-position: 200px 300px, 400px 150px;
+    opacity: 0.7;
+    animation-duration: 200s;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
 }
 
 .flex-center {
