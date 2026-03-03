@@ -413,7 +413,8 @@
 				{ key: "spotify", name: "Spotify", site: "https://spotify.com", label: "spotify.com" },
 				{ key: "discord", name: "Discord", site: "https://discord.com", label: "discord.com" },
 				{ key: "reddit", name: "Reddit", site: "https://reddit.com", label: "reddit.com" },
-				{ key: "geforcenow", name: "GeForce NOW", site: "https://play.geforcenow.com/", label: "play.geforcenow.com" }
+				{ key: "geforcenow", name: "GeForce NOW", site: "https://play.geforcenow.com/", label: "play.geforcenow.com" },
+				{ key: "chatgpt", name: "ChatGPT", site: "https://chatgpt.com/", label: "chatgpt.com" }
 			];
 
 			const grid = document.getElementById("apps-grid");
@@ -471,7 +472,6 @@
 			};
 
 			appFrame.addEventListener("load", () => {
-				// Proxy page loaded in the embed area; hide overlay.
 				stopLoading();
 			});
 
